@@ -1,23 +1,12 @@
-document.addEventListener('mousemove', function(e) {
-    const sparkle = document.createElement('div');
-    sparkle.innerHTML = '✨';
-    sparkle.style.position = 'fixed';
-    sparkle.style.left = e.clientX + 'px';
-    sparkle.style.top = e.clientY + 'px';
-    sparkle.style.fontSize = '20px';
-    sparkle.style.pointerEvents = 'none';
-    sparkle.style.color = '#fff';
+function openNote(message) {
+    const overlay = document.getElementById('note-overlay');
+    const text = document.getElementById('popup-text');
     
-    document.body.appendChild(sparkle);
+    text.innerText = message;
+    overlay.style.display = 'flex';
+}
 
-    // Fade and remove
-    setTimeout(() => {
-        sparkle.style.transition = '0.5s';
-        sparkle.style.opacity = '0';
-        sparkle.style.transform = 'translateY(20px)';
-    }, 100);
-
-    setTimeout(() => {
-        sparkle.remove();
-    }, 600);
+// Close popup when clicking anywhere on the overlay
+document.getElementById('note-overlay').addEventListener('click', function() {
+    this.style.display = 'none';
 });
