@@ -1,4 +1,4 @@
-html, body {
+html, body, * {
     cursor: url('cursor.png'), auto !important;
 }
 /* If you want that thick pixel feel without broken images, 
