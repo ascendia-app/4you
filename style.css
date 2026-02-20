@@ -1,11 +1,24 @@
-html, body, * {
-    cursor: url('cursor.png'), auto !important;
+/* Apply the custom cursor to everything */
+/* 'auto' is the fallback; the 0 0 sets the 'click point' to the top-left corner */
+html, body {
+    cursor: url('cursor.png') 0 0, auto !important;
+    min-height: 100vh;
 }
-/* If you want that thick pixel feel without broken images, 
-   we use 'crosshair' which is very thin/pixelated by default */
 
-/* Re-enable default cursor for the iframe so it doesn't break Spotify */
-/* Envelopes positioned on the sides */
+/* Force it on interactive elements too */
+a, button, .envelope, .pixel-box, h1, p, span {
+    cursor: url('cursor.png') 0 0, pointer !important;
+}
+
+/* We must reset the scanline and overlay so they don't 'block' the cursor */
+body::before, .scanline, .scanline-overlay {
+    pointer-events: none !important;
+}
+
+/* Keep Spotify default so it stays functional */
+iframe {
+    cursor: auto !important;
+}
 .envelope {
     position: absolute;
     font-size: 4rem;
