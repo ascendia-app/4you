@@ -1,9 +1,14 @@
 /* --- ENVELOPE & POPUP SPECIFIC CSS --- */
 
-html, body, a, button {
+/* Apply to EVERYTHING */
+html, body, * {
     cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAX0lEQVQ4T2NkoBAwUqifYfQA6GKMTf///8/AwIAu8P///08ZGRjY0QVAfLBaXAbAbALZAKwA7D6A2QR0A7ACGAtuYAbA5mNoALuL0f0AsisYGRjY0A0hByAsD6ALUEofAD69DxG8H89VAAAAAElFTkSuQmCC'), auto !important;
 }
 
+/* Specific fix for links and buttons which often reset the cursor */
+a, button, .envelope, iframe {
+    cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAX0lEQVQ4T2NkoBAwUqifYfQA6GKMTf///8/AwIAu8P///08ZGRjY0QVAfLBaXAbAbALZAKwA7D6A2QR0A7ACGAtuYAbA5mNoALuL0f0AsisYGRjY0A0hByAsD6ALUEofAD69DxG8H89VAAAAAElFTkSuQmCC'), pointer !important;
+}
 /* Envelopes positioned on the sides */
 .envelope {
     position: absolute;
