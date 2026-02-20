@@ -3,28 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>✧･ﾟ: * FOR YOU * :･ﾟ✧</title>
+    <title>✧･ﾟ: * FOR HUZAIFA * :･ﾟ✧</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="scanline"></div>
+
+    <div class="envelope left" onclick="openNote('You are the goat! 🐐')">✉️</div>
 
     <div class="pixel-box">
-        
+        <div class="header-bar">system.err</div>
         <div class="content">
-            
             <h1>Hi Huzaifa! ૮꒰ ˶• ༝ •˶꒱ა</h1>
-            
             <p class="note">
                 Welcome to your purple pixel corner! <br>
                 You're the best. Stay cool. 👾
             </p>
-
-    <div class="spotify-wrapper">
+            <div class="spotify-wrapper">
                 <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0tjOSBmBOlQHhtVtvIYg24?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             </div>
+        </div>
+    </div>
 
-    
+    <div class="envelope right" onclick="openNote('Keep being iconic. ✨')">✉️</div>
+
+    <div id="note-overlay" onclick="this.style.display='none'">
+        <div class="popup-card">
+            <p id="popup-text"></p>
+            <small>(click to close)</small>
         </div>
     </div>
 
