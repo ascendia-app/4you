@@ -1,77 +1,88 @@
-:root {
-    --bg-color: #0f0c29; 
-    --accent-purple: #c396ff;
-}
-
 body {
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-    font-family: 'Inter', sans-serif;
-    color: #ffffff;
+    background-color: #4b0082;
+    /* Pixel checkerboard pattern */
+    background-image:  
+        linear-gradient(45deg, #3d006b 25%, transparent 25%), 
+        linear-gradient(-45deg, #3d006b 25%, transparent 25%), 
+        linear-gradient(45deg, transparent 75%, #3d006b 75%), 
+        linear-gradient(-45deg, transparent 75%, #3d006b 75%);
+    background-size: 40px 40px;
+    background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+    
+    font-family: 'VT323', monospace;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    overflow: hidden; /* Keeps stars inside */
+    margin: 0;
+    overflow: hidden;
 }
 
-#star-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    pointer-events: none;
-}
-
-.card {
-    position: relative;
-    z-index: 10;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 24px;
-    padding: 40px;
-    max-width: 420px;
+.pixel-box {
+    background: #9d72ff;
+    border: 4px solid #000;
+    box-shadow: 10px 10px 0px #2a004d; /* Chunky 2D shadow */
     width: 90%;
-    text-align: center;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-    animation: fadeIn 2s ease-in-out;
+    max-width: 450px;
+}
+
+.header-bar {
+    background: #000;
+    color: #fff;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+}
+
+.content {
+    padding: 20px;
+    border-top: 4px solid #000;
 }
 
 h1 {
-    font-family: 'Dancing Script', cursive;
-    font-size: 3rem;
+    font-size: 2.5rem;
+    color: #fff;
+    text-shadow: 3px 3px 0px #000;
+    margin: 10px 0;
+}
+
+.pixel-text {
+    background: #fff;
+    color: #000;
+    padding: 5px;
+    border: 2px solid #000;
     margin-bottom: 15px;
-    color: var(--accent-purple);
-    text-shadow: 0 0 15px rgba(195, 150, 255, 0.4);
 }
 
 .note {
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 25px;
-    color: #e0e0e0;
-    font-weight: 300;
+    font-size: 1.5rem;
+    color: #fff;
+    background: #6a0dad;
+    padding: 15px;
+    border: 3px dashed #fff;
+    margin-bottom: 20px;
 }
 
-.star {
-    position: absolute;
-    background: white;
-    border-radius: 50%;
-    opacity: 0.5;
-    animation: float 5s infinite ease-in-out;
+.spotify-container {
+    border: 4px solid #000;
+    line-height: 0;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+.decorations {
+    font-size: 2rem;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-around;
 }
 
-@keyframes float {
-    0%, 100% { transform: translateY(0); opacity: 0.3; }
-    50% { transform: translateY(-20px); opacity: 0.8; }
+/* Make emojis bounce */
+span {
+    display: inline-block;
+    animation: bounce 0.5s infinite alternate;
+}
+
+@keyframes bounce {
+    from { transform: translateY(0); }
+    to { transform: translateY(-10px); }
 }
