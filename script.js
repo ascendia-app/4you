@@ -1,25 +1,23 @@
-const starContainer = document.getElementById('star-container');
-const starCount = 50;
-
-for (let i = 0; i < starCount; i++) {
-    const star = document.createElement('div');
-    star.className = 'star';
+document.addEventListener('mousemove', function(e) {
+    const sparkle = document.createElement('div');
+    sparkle.innerHTML = '✨';
+    sparkle.style.position = 'fixed';
+    sparkle.style.left = e.clientX + 'px';
+    sparkle.style.top = e.clientY + 'px';
+    sparkle.style.fontSize = '20px';
+    sparkle.style.pointerEvents = 'none';
+    sparkle.style.color = '#fff';
     
-    // Randomize position
-    const x = Math.random() * 100;
-    const y = Math.random() * 100;
-    
-    // Randomize size
-    const size = Math.random() * 3;
-    
-    // Randomize animation delay so they don't pulse at the same time
-    const delay = Math.random() * 5;
+    document.body.appendChild(sparkle);
 
-    star.style.left = `${x}%`;
-    star.style.top = `${y}%`;
-    star.style.width = `${size}px`;
-    star.style.height = `${size}px`;
-    star.style.animationDelay = `${delay}s`;
+    // Fade and remove
+    setTimeout(() => {
+        sparkle.style.transition = '0.5s';
+        sparkle.style.opacity = '0';
+        sparkle.style.transform = 'translateY(20px)';
+    }, 100);
 
-    starContainer.appendChild(star);
-}
+    setTimeout(() => {
+        sparkle.remove();
+    }, 600);
+});
