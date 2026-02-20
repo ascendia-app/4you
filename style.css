@@ -1,6 +1,5 @@
 /* --- ENVELOPE & POPUP SPECIFIC CSS --- */
 
-/* Custom Thick Pixel Cursor */
 html, body, a, button {
     cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAX0lEQVQ4T2NkoBAwUqifYfQA6GKMTf///8/AwIAu8P///08ZGRjY0QVAfLBaXAbAbALZAKwA7D6A2QR0A7ACGAtuYAbA5mNoALuL0f0AsisYGRjY0A0hByAsD6ALUEofAD69DxG8H89VAAAAAElFTkSuQmCC'), auto !important;
 }
